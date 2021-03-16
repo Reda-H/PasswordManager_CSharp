@@ -1,0 +1,52 @@
+﻿<Window x:Class="PasswordManager._2___UI.ModifyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManager._2___UI"
+        mc:Ignorable="d"
+        Title="ModifyWindow" Height="400" Width="357.901">
+    <Grid>
+        <Grid>
+            <Label Content="Modify This Account" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="38" Margin="0,0,0.6,0" VerticalContentAlignment="Center"/>
+            <Grid Margin="0,55,-0.4,283.4">
+                <Label Content="Id" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=Id}" IsReadOnly="True" x:Name="idTB" HorizontalAlignment="Left" Height="23" Margin="128,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyIDButton" Content="Copy" HorizontalAlignment="Left" Margin="288,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyIDButton_Click"/>
+            </Grid>
+
+            <Grid Margin="0,92,-0.4,246.4">
+                <Label Content="Account Name" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=AccountName}" x:Name="accountNameTB" HorizontalAlignment="Left" Height="23" Margin="128,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyAccountNameButton" Content="Copy" HorizontalAlignment="Left" Margin="288,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyAccountNameButton_Click"/>
+            </Grid>
+            <Grid Margin="-1,129,0.6,209.4">
+                <Label Content="Email" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=Email}" x:Name="emailTB" HorizontalAlignment="Left" Height="23" Margin="129,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyEmailNameButton" Content="Copy" HorizontalAlignment="Left" Margin="289,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyEmailNameButton_Click"/>
+            </Grid>
+            <Grid Margin="-1,166,0.6,172.4">
+                <Label Content="Password" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=Password}" x:Name="passwordTB" HorizontalAlignment="Left" Height="23" Margin="129,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyPasswordButton" Content="Copy" HorizontalAlignment="Left" Margin="289,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyPasswordButton_Click"/>
+            </Grid>
+            <Grid Margin="-1,203,0.6,135.4">
+                <Label Content="Extra Information 1" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=ExtraInformation1}" x:Name="extraInfo1TB" HorizontalAlignment="Left" Height="23" Margin="129,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyExtraInfo1Button" Content="Copy" HorizontalAlignment="Left" Margin="289,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyExtraInfo1Button_Click"/>
+            </Grid>
+            <Grid Margin="-1,240,0.6,98.4">
+                <Label Content="Extra Information 2" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=ExtraInformation2}" x:Name="extraInfo2TB" HorizontalAlignment="Left" Height="23" Margin="129,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyExtraInfo2Button" Content="Copy" HorizontalAlignment="Left" Margin="289,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyExtraInfo2Button_Click"/>
+            </Grid>
+            <Grid Margin="0,277,-0.4,61.4">
+                <Label Content="Extra Information 3" Margin="10,0,165,0" />
+                <TextBox Text="{Binding Path=ExtraInformation3}" x:Name="extraInfo3TB" HorizontalAlignment="Left" Height="23" Margin="128,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                <Button x:Name="CopyExtraInfo3Button" Content="Copy" HorizontalAlignment="Left" Margin="288,6,0,0" VerticalAlignment="Top" Width="53" Click="CopyExtraInfo3Button_Click"/>
+            </Grid>
+        </Grid>
+        <Button x:Name="CancelButton" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Cancel" Height="26" Width="79" Margin="10,0,0,9.8" Click="CancelButton_Click"/>
+        <Button x:Name="ModifyButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Modify" Height="26" Width="79" Margin="204,0,10,9.8" Click="ModifyButton_Click" RenderTransformOrigin="0.5,0.515"/>
+    </Grid>
+</Window>

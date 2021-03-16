@@ -1,0 +1,43 @@
+﻿<Window x:Class="PasswordManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManager"
+        mc:Ignorable="d"
+        Title="PasswordManager" Height="720" Width="1280" Loaded="Window_Loaded">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Width="200">
+            <Label Content="Controllers" HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Top" HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" Height="70" 
+                   />
+            <Button x:Name="AddButton" Content="Add Account" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" Height="70" Width="180" Margin="10,75,10,545.4" Background="Black" Foreground="White" Click="AddButton_Click"/>
+            <Button x:Name="ModifyButton" Content="Modify Account" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" Height="70" Width="180" Margin="10,150,10,470.4" Foreground="White" Background="Black" Click="ModifyButton_Click"/>
+            <Button x:Name="DeleteButton" Content="Delete Account" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" Height="70" Width="180" Margin="10,225,10,395.4" Foreground="White" Background="Black" Click="DeleteButton_Click"/>
+        </Grid>
+        <Grid Margin="200,75,0,0">
+            <DataGrid x:Name="AccountDataGrid" HorizontalAlignment="Left" Height="615" 
+                      VerticalAlignment="Top" Width="1069" Margin="0 0 0 0" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" IsReadOnly="True">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <!-- Column Headers and Text Bindings -->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Account Name" Width="*" Binding="{Binding AccountName}"/>
+                    <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
+                    <!--<DataGridTextColumn Header="Password" Width="*" Binding="{Binding Password}"/>-->
+                    <DataGridTextColumn Header="ExtraInformation1" Width="*" Binding="{Binding ExtraInformation1}"/>
+                    <DataGridTextColumn Header="ExtraInformation2" Width="*" Binding="{Binding ExtraInformation2}"/>
+                    <DataGridTextColumn Header="ExtraInformation3" Width="*" Binding="{Binding ExtraInformation3}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
