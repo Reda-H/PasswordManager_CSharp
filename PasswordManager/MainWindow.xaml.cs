@@ -41,8 +41,6 @@ namespace PasswordManager
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Account newAccount = new Account(email: "Reda", password: "12345678");
-            //accounts.Add(newAccount);
             DBConnect connect = new DBConnect();
             this.Accounts = connect.Select();
             AccountDataGrid.ItemsSource = this.Accounts;
