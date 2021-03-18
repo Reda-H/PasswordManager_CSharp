@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordManager._4___ExtVariables
 {
+    using System;
     using System.IO;
     public static class DotEnv
     {

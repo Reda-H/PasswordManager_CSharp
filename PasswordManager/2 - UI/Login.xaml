@@ -8,7 +8,7 @@
         Title="Login" Height="150" Width="400">
     <Grid>
         <Grid Margin="36,32,43.6,39.8">
-            <TextBox x:Name="MasterPassTextBox" Height="23" Margin="0,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="314"/>
+            <TextBox x:Name="MasterPassTextBox" KeyDown="OnKeyDownHandler" Height="23" Margin="0,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="314"/>
             <Label x:Name="MasterPassLabel" Content="Master Password" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Grid>
         <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" Margin="275,86,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="ConnectButton_Click"/>

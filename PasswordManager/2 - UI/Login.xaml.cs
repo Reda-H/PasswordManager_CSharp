@@ -20,16 +20,46 @@ namespace PasswordManager._2___UI
     public partial class Login : Window
     {
         public bool isAuthenticated = false;
-        public string masterPass = "qwertyuiopasdf";
+        //public string masterPass = "qwertyuiopasdf";
+        public string masterPass;
 
         public Login()
         {
+            masterPass = System.IO.File.ReadAllText(@"C:\Users\Public\Documents\TestFolder\MPass.txt");
+            //System.IO.File.WriteAllText(@"C:\Users\Public\Documents\TestFolder\MPass.txt", Encryption.AESGCM.SimpleEncryptWithPassword(masterPass, Environment.GetEnvironmentVariable("DEFAULT_MASTERPASS")));
             InitializeComponent();
         }
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
-            if(MasterPassTextBox.Text.Equals(masterPass))
+            if (
+                MasterPassTextBox.Text.Equals(
+                    Encryption.AESGCM.SimpleDecryptWithPassword(
+                        masterPass, 
+                        Environment.GetEnvironmentVariable("DEFAULT_MASTERPASS")
+                        )
+                    )
+                )
+            {
+                isAuthenticated = true;
+                this.Close();
+            }
+            else
+            {
+                isAuthenticated = false;
+            }
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (
+                MasterPassTextBox.Text.Equals(
+                    Encryption.AESGCM.SimpleDecryptWithPassword(
+                        masterPass,
+                        Environment.GetEnvironmentVariable("DEFAULT_MASTERPASS")
+                        )
+                    )
+                )
             {
                 isAuthenticated = true;
                 this.Close();

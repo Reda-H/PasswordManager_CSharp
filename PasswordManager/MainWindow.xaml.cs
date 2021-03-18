@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,7 +17,7 @@ using Org.BouncyCastle.Crypto.Engines;
 using PasswordManager._1___Classes;
 using PasswordManager._2___UI;
 using PasswordManager._3___DatabaseConnector;
-//using PasswordManager._4___ExtVariables;
+using PasswordManager._4___ExtVariables;
 
 namespace PasswordManager
 {
@@ -25,10 +26,13 @@ namespace PasswordManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string root = Directory.GetCurrentDirectory();
+        string dotenv = System.IO.Path.Combine(root, @"..\..\.env");
         public List<Account> Accounts = new List<Account>();
         private string MasterPass;
         public MainWindow()
         {
+            DotEnv.Load(dotenv);
             Login loginWindow = new Login();
             loginWindow.ShowDialog();
             if (loginWindow.isAuthenticated)
